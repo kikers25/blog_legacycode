@@ -1,13 +1,13 @@
 package com.blog;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.Is.is;
-import static org.mockito.Mockito.mock;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.mock;
 
 @RunWith(org.mockito.runners.MockitoJUnitRunner.class)
 public class UserServiceTest {
@@ -22,13 +22,8 @@ public class UserServiceTest {
     final UserAdapter userAdapter = new UserAdapter();
     userConfigurationService = mock(UserConfigurationService.class);
 
-    userService = new UserService(userAdapter) {
-      @Override
-      protected UserConfigurationService getUserConfigurationService() {
-        return userConfigurationService;
-      }
-    };
-
+    userService = new UserService(userAdapter)
+            .setUserConfigurationService(userConfigurationService);
   }
 
   @Test

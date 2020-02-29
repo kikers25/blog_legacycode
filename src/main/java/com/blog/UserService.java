@@ -2,6 +2,8 @@ package com.blog;
 
 public class UserService {
 
+  private UserConfigurationService userConfigurationService = null;
+
   public UserService(UserAdapter userAdapter) {
     this.userAdapter = userAdapter;
   }
@@ -18,7 +20,15 @@ public class UserService {
   }
 
   protected UserConfigurationService getUserConfigurationService() {
-    return Factory.getUserConfigurationService();
+    if (userConfigurationService == null) {
+      return Factory.getUserConfigurationService();
+    }
+    return userConfigurationService;
   }
 
+  // Just for testing purposes
+  public UserService setUserConfigurationService(UserConfigurationService userConfigurationService) {
+    this.userConfigurationService = userConfigurationService;
+    return this;
+  }
 }
