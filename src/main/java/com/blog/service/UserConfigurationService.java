@@ -1,4 +1,6 @@
-package com.blog;
+package com.blog.service;
+
+import com.blog.domain.UserConfiguration;
 
 public class UserConfigurationService {
 

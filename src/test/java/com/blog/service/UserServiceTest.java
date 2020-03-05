@@ -1,5 +1,7 @@
-package com.blog;
+package com.blog.service;
 
+import com.blog.domain.User;
+import com.blog.domain.UserConfiguration;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

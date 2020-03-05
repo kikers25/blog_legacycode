@@ -1,4 +1,7 @@
-package com.blog;
+package com.blog.service;
+
+import com.blog.domain.User;
+import com.blog.domain.UserConfiguration;
 
 public class UserService {
 

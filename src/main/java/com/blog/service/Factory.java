@@ -1,4 +1,4 @@
-package com.blog;
+package com.blog.service;
 
 public class Factory {
 
