@@ -24,7 +24,7 @@ public class UserServiceTest {
     final UserAdapter userAdapter = new UserAdapter();
     userConfigurationService = mock(UserConfigurationService.class);
 
-    userService = new UserService(userAdapter)
+    userService = new UserService(userAdapter, Factory.getUserConfigurationService())
             .setUserConfigurationService(userConfigurationService);
   }
 

@@ -5,10 +5,11 @@ import com.blog.domain.UserConfiguration;
 
 public class UserService {
 
-  private UserConfigurationService userConfigurationService = null;
+  private UserConfigurationService userConfigurationService;
 
-  public UserService(UserAdapter userAdapter) {
+  public UserService(UserAdapter userAdapter, UserConfigurationService userConfigurationService) {
     this.userAdapter = userAdapter;
+    this.userConfigurationService = userConfigurationService;
   }
 
   private UserAdapter userAdapter;

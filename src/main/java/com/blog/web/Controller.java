@@ -1,6 +1,7 @@
 package com.blog.web;
 
 import com.blog.domain.User;
+import com.blog.service.Factory;
 import com.blog.service.UserAdapter;
 import com.blog.service.UserService;
 
@@ -16,7 +17,7 @@ public class Controller  extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
 
-        UserService userService = new UserService(new UserAdapter());
+        UserService userService = new UserService(new UserAdapter(), Factory.getUserConfigurationService());
         User user = userService.getUser(request.getParameter(USER));
 
         // Do something
